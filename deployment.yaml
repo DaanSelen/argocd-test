@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-test
-  namespace: argocd-apps
 spec:
   replicas: 3
   selector:
