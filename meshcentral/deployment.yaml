@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meshcentral-deployment
+  namespace: meshcentral
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meshcentral
+  template:
+    metadata:
+      labels:
+        app: meshcentral
+    spec:
+      containers:
+      - name: meshcentral
+        image: docker.io/dselen/meshcentral:latest
+        ports:
+        - containerPort: 443
