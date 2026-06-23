@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: meshcentral-deployment
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: meshcentral=docker.io/dselen/meshcentral
+    argocd-image-updater.argoproj.io/meshcentral.image-name: docker.io/dselen/meshcentral
 spec:
   replicas: 1
   selector:
